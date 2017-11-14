@@ -1,6 +1,15 @@
+<h2>My Patients</h2>
+<ul class="patients">
+  <li *ngFor='let patient of patients'>
+    <span class="badge">{{patient.id}}</span> {{patient.name}}
+  </li>
+</ul>
+
+
+
 <div>
     <label>name:
         <input [(ngModel)]="patient.name" placeholder="name">
     </label>
 </div>
-<h1>{{patient.name}}</h1>
+
