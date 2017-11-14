@@ -7,6 +7,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class PatientComponent implements OnInit {
+  patient="collins"
 
   constructor() { }
 
