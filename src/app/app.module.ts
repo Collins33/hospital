@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PatientComponent } from './patient/patient.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -11,9 +12,10 @@ import { PatientComponent } from './patient/patient.component';
     AppComponent,
     PatientComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+ imports: [
+  BrowserModule,
+  FormsModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })
