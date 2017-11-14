@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Patient } from '../patient';
 
 @Component({
   selector: 'app-patient',
@@ -7,7 +8,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class PatientComponent implements OnInit {
-  patient="collins"
+  patient:Patient={
+    id:1,
+    name:"Collins"
+  };
 
   constructor() { }
 
