@@ -6,20 +6,23 @@ import {PatientService} from './patient.service'
 import { AppComponent } from './app.component';
 import { PatientComponent } from './patient/patient.component';
 import { FormsModule } from '@angular/forms';
-import { PatientDetailComponent } from './patient-detail/patient-detail.component'; // <-- NgModel lives here
+import { PatientDetailComponent } from './patient-detail/patient-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service'; // <-- NgModel lives here
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PatientComponent,
-    PatientDetailComponent
+    PatientDetailComponent,
+    MessagesComponent
   ],
  imports: [
   BrowserModule,
   FormsModule
 ],
-  providers: [PatientService],
+  providers: [PatientService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
