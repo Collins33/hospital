@@ -2,15 +2,7 @@ import {Patient} from './patient';
 //import the Patient class so that I can use it
 
 //export it so that you can use it somewhere else
-export const PATIENTS: Patient[]=[{ id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
+export const PATIENTS: Patient[]=[{ id: 1, first: 'collins',last:"njau",email:"collinsnjau39@gmail.com",birth:"15/9/1994",phone:"0702848032"},
+  { id: 2, first: 'muru',last:"njau",email:"murunjau390@gmail.com",birth:"15/7/1994",phone:"0702868032"}
 ];
 

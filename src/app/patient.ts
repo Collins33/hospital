@@ -1,4 +1,8 @@
 export class Patient{
     id:number;
-    name:string;
+    first:string;
+    last:string;
+    email:string;
+    birth:string;
+    phone:string;
 }
