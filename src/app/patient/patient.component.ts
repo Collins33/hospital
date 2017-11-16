@@ -13,16 +13,16 @@ import {PATIENTS} from '../mock-patients'
 })
 export class PatientComponent implements OnInit {
   //add patient property for binding
-  patients=PATIENTS;
+  patients = PATIENTS;
 
-  patient:Patient={
-    id:1,
-    name:"Collins"
-  };
-
+  selectedPatient=Patient;
   constructor() { }
 
   ngOnInit() {
   }
+
+onSelect(patient: Patient): void {
+  this.selectedPatient = Patient;
+}
 
 }
