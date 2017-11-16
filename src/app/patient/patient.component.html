@@ -13,8 +13,17 @@
 <div><span>Email Address:</span>{{selectedPatient.email}}</div>
 <div><span>Phone number:</span>{{selectedPatient.phone}}</div>
 <div>
-  <label>name:
+  <label>First Name:
     <input [(ngModel)]="selectedPatient.first" placeholder="name">
+  </label>
+   <label>Last Name:
+    <input [(ngModel)]="selectedPatient.last" placeholder="name">
+  </label>
+  <label>Date of birth:
+    <input [(ngModel)]="selectedPatient.birth" placeholder="name">
+  </label>
+  <label>Email Address:
+    <input [(ngModel)]="selectedPatient.email" placeholder="name">
   </label>
 </div>
 
