@@ -1,0 +1,22 @@
+
+<div *ngIf="patient">
+<h2>{{patient.first | uppercase}} Details</h2>
+<div><span>Second name:</span>{{patient.last}}</div>
+<div><span>Date of birth:</span>{{patient.birth}}</div>
+<div><span>Email Address:</span>{{patient.email}}</div>
+<div><span>Phone number:</span>{{patient.phone}}</div>
+<div>
+  <label>First Name:
+    <input [(ngModel)]="patient.first" placeholder="name">
+  </label>
+   <label>Last Name:
+    <input [(ngModel)]="patient.last" placeholder="name">
+  </label>
+  <label>Date of birth:
+    <input [(ngModel)]="patient.birth" placeholder="name">
+  </label>
+  <label>Email Address:
+    <input [(ngModel)]="patient.email" placeholder="name">
+  </label>
+</div>
+</div>

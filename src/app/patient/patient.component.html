@@ -1,31 +1,13 @@
 <h2>My Patients</h2>
 <ol class="patients">
-  <li *ngFor="let patient of patients" (click)="onSelect(patient)">
+  <li *ngFor="let patient of patients" 
+  [class.selected]="patient === selectedPatient"
+  (click)="onSelect(patient)">
     <span class="badge">{{patient.id}}</span> {{patient.first}}
   </li>
 </ol>
 
-
-
-<h2>{{ selectedPatient.first | uppercase }} Details</h2>
-<div><span>Second name:</span>{{selectedPatient.last}}</div>
-<div><span>Date of birth:</span>{{selectedPatient.birth}}</div>
-<div><span>Email Address:</span>{{selectedPatient.email}}</div>
-<div><span>Phone number:</span>{{selectedPatient.phone}}</div>
-<div>
-  <label>First Name:
-    <input [(ngModel)]="selectedPatient.first" placeholder="name">
-  </label>
-   <label>Last Name:
-    <input [(ngModel)]="selectedPatient.last" placeholder="name">
-  </label>
-  <label>Date of birth:
-    <input [(ngModel)]="selectedPatient.birth" placeholder="name">
-  </label>
-  <label>Email Address:
-    <input [(ngModel)]="selectedPatient.email" placeholder="name">
-  </label>
-</div>
+<app-patient-detail [patient]=selectedPatient></app-patient-detail>
 
 
 
