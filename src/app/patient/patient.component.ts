@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Patient } from '../patient';
-import {PATIENTS} from '../mock-patients'
+import {PatientService} from '../patient.service'
 
 
 
@@ -13,13 +13,21 @@ import {PATIENTS} from '../mock-patients'
 })
 export class PatientComponent implements OnInit {
   //add patient property for binding
-  patients = PATIENTS;
-
+  patients:Patient[];
+  
   selectedPatient=Patient;
   
-  constructor() { }
+  //inject the service
+  constructor(private patientService:PatientService) { }
+
+  //function to retrieve patients from the service we injected into the class
+  getPatient():void{
+    this.patients=this.patientService.getPatients();
+  }
 
   ngOnInit() {
+    //call the method inside the lifecycle hook
+    this.getPatient();
   }
 
 onSelect(patient: Patient): void {

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {PatientService} from './patient.service'
 
 
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
   BrowserModule,
   FormsModule
 ],
-  providers: [],
+  providers: [PatientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
