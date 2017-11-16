@@ -16,13 +16,14 @@ export class PatientComponent implements OnInit {
   patients = PATIENTS;
 
   selectedPatient=Patient;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
 onSelect(patient: Patient): void {
-  this.selectedPatient = Patient;
-}
+    this.selectedPatient = patient;
+  }
 
 }
