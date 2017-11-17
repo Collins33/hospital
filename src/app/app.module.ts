@@ -11,7 +11,8 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
 
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
-import { AppRoutingModule } from './/app-routing.module'; // <-- NgModel lives here
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './/app-routing.module'; // <-- NgModel lives h
     AppComponent,
     PatientComponent,
     PatientDetailComponent,
-    MessagesComponent, 
+    MessagesComponent,
+    DashboardComponent, 
   ],
  imports: [
   BrowserModule,
