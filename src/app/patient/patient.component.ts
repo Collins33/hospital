@@ -15,7 +15,7 @@ export class PatientComponent implements OnInit {
   //add patient property for binding
   patients:Patient[];
   
-  selectedPatient=Patient;
+  
   
   //inject the service
   constructor(private patientService:PatientService) { }
@@ -33,8 +33,6 @@ export class PatientComponent implements OnInit {
     this.getPatient();
   }
 
-onSelect(patient: Patient): void {
-    this.selectedPatient = patient;
-  }
+
 
 }

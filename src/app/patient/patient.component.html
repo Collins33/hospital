@@ -1,13 +1,14 @@
 <h2>My Patients</h2>
 <ol class="patients">
   <li *ngFor="let patient of patients" 
-  [class.selected]="patient === selectedPatient"
-  (click)="onSelect(patient)">
+  >
+  <a routerLink="/detail/{{patient.id}}">
     <span class="badge">{{patient.id}}</span> {{patient.first}}
+    </a>
   </li>
 </ol>
 
-<app-patient-detail [patient]=selectedPatient></app-patient-detail>
+<!-- <app-patient-detail [patient]=selectedPatient></app-patient-detail> -->
 
 
 

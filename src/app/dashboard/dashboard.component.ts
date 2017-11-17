@@ -10,18 +10,24 @@ import {PatientService} from '../patient.service'
   encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
-  patients: Patient[]=[];
+  patients:Patient[];
+  
+ 
+  
+  //inject the service
+  constructor(private patientService:PatientService) { }
 
-  constructor(private patientService: PatientService) { }
-
-  ngOnInit() {
-    this.getPatient();
-  }
-
-   getPatient():void{
+  //function to retrieve patients from the service we injected into the class
+  
+  getPatient():void{
     this.patientService.getPatients()
     //edit the get patient so that it corresponds with the new method
     .subscribe(patients => this.patients = patients)
+  }
+
+  ngOnInit() {
+    //call the method inside the lifecycle hook
+    this.getPatient();
   }
 
 
