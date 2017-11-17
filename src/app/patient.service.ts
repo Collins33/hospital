@@ -14,6 +14,12 @@ export class PatientService {
     this.messageService.add('PatientService:fetched patients');
     return of(PATIENTS);
   }
+
+  getPatient(id: number): Observable<Patient[]>{
+    this.messageService.add('PatientService:fetched patients id=${id}');
+
+    return of(PATIENTS.find(patient => patient.id === id));
+  }
   
   constructor(private messageService: MessageService) { }
 

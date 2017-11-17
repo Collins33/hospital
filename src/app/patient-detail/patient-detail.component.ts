@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation,Input } from '@angular/core';
 import { Patient } from '../patient';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import {PatientService} from '../patient.service'
 
 @Component({
   selector: 'app-patient-detail',
@@ -10,9 +13,19 @@ import { Patient } from '../patient';
 export class PatientDetailComponent implements OnInit {
 @Input() patient: Patient;
   
-  constructor() { }
+  constructor(
+     private route: ActivatedRoute,
+     private patientService: PatientService,
+     private location: Location
+  ) {}
+    getPatient():void{
+      const id= +this.route.snapshot.paramMap.get('id');
+      this.patientService.getPatient(id)
+      .subscribe(patient => this.patient = patient);
+    }
 
   ngOnInit() {
+    this.getPatient();
   }
 
 }
