@@ -22,9 +22,7 @@ export class PatientComponent implements OnInit {
 
   //function to retrieve patients from the service we injected into the class
   getPatient():void{
-    this.patientService.getPatients()
-    .subscribe(patients => this.patients = patients);
-
+    this.patients=this.patientService.getPatients();
   }
 
   ngOnInit() {
