@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-messages',
@@ -8,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public messageService: MessageService) {}
 
   ngOnInit() {
   }
