@@ -10,7 +10,8 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
 
 
 import { MessagesComponent } from './messages/messages.component';
-import { MessageService } from './message.service'; // <-- NgModel lives here
+import { MessageService } from './message.service';
+import { AppRoutingModule } from './/app-routing.module'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MessageService } from './message.service'; // <-- NgModel lives here
   ],
  imports: [
   BrowserModule,
-  FormsModule
+  FormsModule,
+  AppRoutingModule,
 ],
   providers: [PatientService, MessageService],
   bootstrap: [AppComponent]
