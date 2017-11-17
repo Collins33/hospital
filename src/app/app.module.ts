@@ -8,7 +8,8 @@ import { PatientComponent } from './patient/patient.component';
 import { FormsModule } from '@angular/forms';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
 
-import { MessageService } from './message.service'; // <-- NgModel lives here
+import { MessageService } from './message.service';
+import { MessagesComponent } from './messages/messages.component'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { MessageService } from './message.service'; // <-- NgModel lives here
     AppComponent,
     PatientComponent,
     PatientDetailComponent,
-   
+    MessagesComponent, 
   ],
  imports: [
   BrowserModule,

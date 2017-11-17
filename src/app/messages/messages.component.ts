@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-@Injectable()
-export class MessagesService {
-  messages: string[] = [];
+@Component({
+  selector: 'app-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css'],
+  encapsulation: ViewEncapsulation.None
+})
+export class MessagesComponent implements OnInit {
 
-  add(message: string) {
-    this.messages.push(message);
+  constructor() { }
+
+  ngOnInit() {
   }
 
-  clear() {
-    this.messages.length = 0;
-  }
 }

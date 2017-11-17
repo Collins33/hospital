@@ -34,7 +34,7 @@ export class PatientComponent implements OnInit {
   }
 
 onSelect(patient: Patient): void {
-    this.selectedPatient = patient;
+    this.selectedPatient = Patient;
   }
 
 }
