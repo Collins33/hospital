@@ -21,8 +21,11 @@ export class PatientComponent implements OnInit {
   constructor(private patientService:PatientService) { }
 
   //function to retrieve patients from the service we injected into the class
+  
   getPatient():void{
-    this.patients=this.patientService.getPatients();
+    this.patientService.getPatients()
+    //edit the get patient so that it corresponds with the new method
+    .subscribe(patients => this.patients = patients)
   }
 
   ngOnInit() {
