@@ -4,11 +4,12 @@ import { PATIENTS } from './mock-patients';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { MessageService } from './message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable()
 export class PatientService {
-
+    private patientUrl = 'api/patients';  // URL to web api
 
   getPatients(): Observable<Patient[]>{
     this.messageService.add('PatientService:fetched patients');
@@ -17,10 +18,11 @@ export class PatientService {
 
   getPatient(id: number): Observable<Patient[]>{
     this.messageService.add('PatientService:fetched patients id=${id}');
-
-    return of(PATIENTS.find(patient => patient.id === id));
+    //make app get patients by using http
+    return this.http.get<Patient[]>(this.patientUrl);
   }
   
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService,
+   private http: HttpClient,) { }
 
 }
