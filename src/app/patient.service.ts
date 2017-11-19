@@ -11,9 +11,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class PatientService {
     private patientUrl = 'api/patients';  // URL to web api
 
+    //get patients using http
   getPatients(): Observable<Patient[]>{
     this.messageService.add('PatientService:fetched patients');
-    return of(PATIENTS);
+    return this.http.get<Patient[]>(this.patientUrl);
   }
 
   getPatient(id: number): Observable<Patient[]>{
