@@ -33,21 +33,25 @@ private handleError<T> (operation = 'operation', result?: T) {
     console.error(error); // log to console instead
 
     // TODO: better job of transforming error for user consumption
-    this.log(`${operation} failed: ${error.message}`);
+    //this.log(`${operation} failed: ${error.message}`);
 
     // Let the app keep running by returning an empty result.
     return of(result as T);
   };
 }
 
-  getPatient(id: number): Observable<Patient[]>{
-    this.messageService.add('PatientService:fetched patients id=${id}');
-   
-    return this.http.get<Patient[]>(this.patientUrl);
-    
+
+
+  getPatient(id: number):Observable<Patient>{
+     const url = `${this.patientUrl}/${id}`;
+    return this.http.get<Patient>(url).pipe(
+    //tap(_ => this.log(`fetched patient id=${id}`)),
+    catchError(this.handleError<Patient>(`getPatient id=${id}`))
+  );;
+
 
   }
-  
+
   constructor(private messageService: MessageService,
    private http: HttpClient,) { }
 
