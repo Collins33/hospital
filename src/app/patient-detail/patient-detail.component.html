@@ -1,23 +1,41 @@
 
 <div *ngIf="patient">
-<h2>{{patient.first | uppercase}} DETAILS:</h2>
-<div><span>Second name:</span>{{patient.last}}</div>
-<div><span>Date of birth:</span>{{patient.birth}}</div>
-<div><span>Email Address:</span>{{patient.email}}</div>
-<div><span>Phone number:</span>{{patient.phone}}</div>
-<div>
-  <label>First Name:
-    <input [(ngModel)]="patient.first" placeholder="name">
-  </label>
-   <label>Last Name:
-    <input [(ngModel)]="patient.last" placeholder="name">
-  </label>
-  <label>Date of birth:
-    <input [(ngModel)]="patient.birth" placeholder="name">
-  </label>
-  <label>Email Address:
-    <input [(ngModel)]="patient.email" placeholder="name">
-  </label>
+<h1 class="text-center">{{patient.first | uppercase}} DETAILS:</h1>
+<div class="row detailsRow">
+  <div class="col-md-6 patientDetails well">
+<h3>SECOND NAME</h3>
+<h4>{{patient.last}}</h4>
+<h3>DATE OF BIRTH</h3>
+<h4>{{patient.birth}}</h4>
+<h3>PATIENT EMAIL</h3>
+<h4>{{patient.email}}</h4>
+<h3>PATIENT NUMBER</h3>
+<h4>{{patient.phone}}</h4>
+  </div>
+  <div class="col-md-6">
+    <h2 class="text-center">Edit patient details</h2>
+
+      <div class="form-group">
+        <label>First name</label>
+        <input [(ngModel)]="patient.first" placeholder="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Last name</label>
+        <input [(ngModel)]="patient.last" placeholder="name" class="form-control">
+      </div>
+      <div class="form-group">
+         <label>Date of birth</label>
+         <input [(ngModel)]="patient.birth" placeholder="name" class="form-control">
+      </div>
+      <div class="form-group">
+       <label>Email address</label>
+       <input [(ngModel)]="patient.email" placeholder="name" class="form-control">
+      </div>
+<button (click)="save()" class="btn-btn-primary">SAVE DETAILS</button>
+
+  </div>
+
 </div>
-<button (click)="save()">SAVE DETAILS</button>
+
+
 </div>
