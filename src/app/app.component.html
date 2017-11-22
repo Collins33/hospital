@@ -1,15 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <h1 class="text-center">
+ {{title}}
+ </h1>
+  <nav>
+    <a routerLink="/patients">MY PATIENTS</a>
+    <a routerLink="/dashboard">DASHBOARD</a>
+  </nav>
 
   <img width="300" src="http://e-plugin.com/hd/wp-content/uploads/2015/09/aceongEoi.png">
-   <h1>
-  {{title}}
-  </h1>
-<nav>
-  <a routerLink="/patients">MY PATIENTS</a>
-  <a routerLink="/dashboard">DASHBOARD</a>
-</nav>
+
+
+
 <router-outlet></router-outlet>
  <!--<app-messages></app-messages>-->
- 
+
 </div>
