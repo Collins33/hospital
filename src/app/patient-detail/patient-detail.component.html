@@ -1,5 +1,5 @@
 
-
+<div *ngIf="patient">
 <h2>{{patient.first | uppercase}} DETAILS:</h2>
 <div><span>Second name:</span>{{patient.last}}</div>
 <div><span>Date of birth:</span>{{patient.birth}}</div>
@@ -19,6 +19,5 @@
     <input [(ngModel)]="patient.email" placeholder="name">
   </label>
 </div>
-
-
-
+<button (click)="save()">SAVE DETAILS</button>
+</div>

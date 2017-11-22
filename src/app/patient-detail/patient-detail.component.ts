@@ -12,7 +12,7 @@ import {PatientService} from '../patient.service'
 })
 export class PatientDetailComponent implements OnInit {
 @Input() patient: Patient;
-  
+
   constructor(
      private route: ActivatedRoute,
      private patientService: PatientService,
@@ -23,6 +23,13 @@ export class PatientDetailComponent implements OnInit {
       const id= +this.route.snapshot.paramMap.get('id');
       this.patientService.getPatient(id)
       .subscribe(patient => this.patient = patient);
+    }
+    goBack(): void {
+    this.location.back();
+    }
+    save():void{
+      this.patientService.updatePatient(this.patient)
+      .subscribe(() => this.goBack())
     }
 
   ngOnInit():void {

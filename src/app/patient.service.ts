@@ -7,10 +7,15 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 
 @Injectable()
 export class PatientService {
     private patientUrl = 'api/patients';  // URL to web api
+
 
     //get patients using http
   getPatients(): Observable<Patient[]>{
@@ -38,6 +43,10 @@ private handleError<T> (operation = 'operation', result?: T) {
     // Let the app keep running by returning an empty result.
     return of(result as T);
   };
+}
+
+updatePatient(patient:Patient):Observable<any>{
+  return this.http.put(this.patientUrl,patient,httpOptions);
 }
 
 
