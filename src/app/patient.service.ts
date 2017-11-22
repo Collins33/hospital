@@ -49,6 +49,12 @@ updatePatient(patient:Patient):Observable<any>{
   return this.http.put(this.patientUrl,patient,httpOptions);
 }
 
+//add patient
+/** POST: add a new hero to the server */
+addPatient (patient: Patient): Observable<Patient> {
+  return this.http.post<Patient>(this.patientUrl, patient, httpOptions);
+}
+
 
 
   getPatient(id: number):Observable<Patient>{

@@ -1,21 +1,25 @@
-<h2>My Patients</h2>
-<ol class="patients">
-  <li *ngFor="let patient of patients" 
-  >
-  <a routerLink="/detail/{{patient.id}}">
-    <span class="badge">{{patient.id}}</span> {{patient.first}}
-    </a>
-  </li>
-</ol>
+<h1>ADD A PATIENT</h1>
+<div>
+  <label>FIRST NAME:
+    <input #patientFirstName />
+  </label>
+  <label>SECOND NAME:
+    <input #patientSecondName />
+  </label>
+  <label>EMAIL:
+    <input #patientEmail />
+  </label>
+  <label>DATE OF BIRTH:
+    <input #patientBirth />
+  </label>
+  <label>PHONE:
+    <input #patientPhone />
+  </label>
 
-<!-- <app-patient-detail [patient]=selectedPatient></app-patient-detail> -->
-
-
-
-
-<!-- <div>
-    <label>name:
-        <input [(ngModel)]="patient.name" placeholder="name">
-    </label>
-</div> -->
-
+  <!-- (click) passes input value to add()  -->
+  <button (click)="add(patientFirstName.value, patientSecondName.value, patientEmail.value, patientBirth.value, patientPhone.value);
+  patientFirstName.value=''
+  ">
+    add
+  </button>
+</div>
