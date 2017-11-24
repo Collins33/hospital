@@ -11,18 +11,23 @@ import {PatientService} from '../patient.service'
 })
 export class DashboardComponent implements OnInit {
   patients:Patient[];
-  
- 
-  
+
+
+
   //inject the service
   constructor(private patientService:PatientService) { }
 
   //function to retrieve patients from the service we injected into the class
-  
+
   getPatient():void{
     this.patientService.getPatients()
     //edit the get patient so that it corresponds with the new method
     .subscribe(patients => this.patients = patients)
+  }
+  //delete the patient
+  delete(patient:Patient):void{
+    this.patients=this.patients.filter(p =>p !==patient);
+    this.patientService.deletePatient(patient).subscribe()
   }
 
   ngOnInit() {

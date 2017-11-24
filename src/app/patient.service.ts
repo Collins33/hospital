@@ -49,6 +49,15 @@ updatePatient(patient:Patient):Observable<any>{
   return this.http.put(this.patientUrl,patient,httpOptions);
 }
 
+//delete patient
+/** DELETE: delete the hero from the server */
+deletePatient (patient: Patient | number): Observable<Patient> {
+  const id = typeof patient === 'number' ? patient : patient.id;
+  const url = `${this.patientUrl}/${id}`;
+
+  return this.http.delete<Patient>(url, httpOptions);
+}
+
 //add patient
 /** POST: add a new hero to the server */
 addPatient (patient: Patient): Observable<Patient> {

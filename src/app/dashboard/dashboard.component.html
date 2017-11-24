@@ -1,8 +1,10 @@
 <h3>Patients</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let patient of patients" class="col-1-4" routerLink="/detail/{{patient.id}}">
+  <a *ngFor="let patient of patients" class="col-1-4">
     <div class="module patient">
-      <h1>{{patient.first}}</h1>
+      <h1 routerLink="/detail/{{patient.id}}">{{patient.first}}</h1>
+      <button class="delete btn btn-primary" (click)="delete(patient)">DELETE PATIENT</button>
     </div>
   </a>
+
 </div>

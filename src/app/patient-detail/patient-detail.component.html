@@ -1,16 +1,16 @@
 
 <div *ngIf="patient">
 <h1 class="text-center">{{patient.first | uppercase}} DETAILS:</h1>
-<div class="row detailsRow">
+<div class="row detailsRow well">
   <div class="col-md-6 patientDetails well">
-<h3>SECOND NAME</h3>
-<h4>{{patient.last}}</h4>
-<h3>DATE OF BIRTH</h3>
-<h4>{{patient.birth}}</h4>
-<h3>PATIENT EMAIL</h3>
-<h4>{{patient.email}}</h4>
-<h3>PATIENT NUMBER</h3>
-<h4>{{patient.phone}}</h4>
+<h4>SECOND NAME</h4>
+<p>{{patient.last}}</p>
+<h4>DATE OF BIRTH</h4>
+<p>{{patient.birth}}</p>
+<h4>PATIENT EMAIL</h4>
+<p>{{patient.email}}</p>
+<h4>PATIENT NUMBER</h4>
+<p>{{patient.phone}}</p>
   </div>
   <div class="col-md-6">
     <h2 class="text-center">Edit patient details</h2>
